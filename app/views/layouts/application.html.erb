@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Global Legacy Columbus</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag :modernizr %>
+  <%= csrf_meta_tags %>
+</head>
+<body class="<%=controller_name%> <%=action_name%>">
+  <%= render 'layouts/navigation' if user_signed_in? %>
+  <%= yield %>
+</body>
+</html>

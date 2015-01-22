@@ -1,0 +1,16 @@
+.application.landing {
+  background:asset-url('cols.jpg') no-repeat;
+  padding-top:40px;
+  & .logo {
+    background:asset-url('gl-logo-white.png');
+    background-size: 240px 61px;
+    width:240px; height:61px;
+  }
+  & .text {
+    padding:70px 0;
+    & h1, & h2 {
+      color:white;
+      font-weight:100;
+    }
+  }
+}

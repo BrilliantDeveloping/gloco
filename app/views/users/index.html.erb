@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+<hr>
+<h5>Registered Users</h5>
+<hr>
+<table class="table table-hover table-responsive">
+  <thead>
+    <tr>
+      <th>Full Name</th>
+      <th>Email Address</th>
+      <th>Member since</th>
+      <th>Logged in</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @users.each do |user| %>
+      <tr>
+        <td><%= link_to "#{user.firstname} #{user.lastname}", edit_user_path(user) %></td>
+        <td><%= link_to user.email, edit_user_path(user) %></td>
+        <td><%= user.created_at.strftime('%b %d, %Y') %></td>
+        <td><%= user.sign_in_count %> <%= user.sign_in_count == 1 ? 'time' : 'times'%></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%#= link_to 'New User', new_user_path %>

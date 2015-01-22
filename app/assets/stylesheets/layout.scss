@@ -1,0 +1,41 @@
+@import "bootstrap-sprockets";
+@import "bootstrap";
+@import "font-awesome-sprockets";
+@import "font-awesome";
+
+body {
+  background:white;
+  padding:70px 40px 40px 40px;
+  @import "landing";
+  @import "sessions";
+}
+
+* {
+  outline:0;
+}
+.btn-wide {
+  width:100%;
+  text-align:center;
+}
+h5 {
+  text-align:center;
+  color:#777;
+  font-size:16px;
+}
+// Bootstrap Overrides
+.form-control {
+  height:44px;
+  color:#777;
+  border-radius:3px;
+}
+label {
+  font-weight:normal;
+  margin-bottom:0;
+  color:#777;
+}
+.btn {
+  border-radius:3px;
+}
+hr {
+  border-color:#ddd;
+}
