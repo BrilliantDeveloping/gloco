@@ -1,9 +1,12 @@
 <div class="fileinput fileinput-new" data-provides="fileinput">
   <div class="fileinput-new btn-file">
-    <%= avatar(user, 'profile') %>
-    <%= f.file_field :avatar %>
-    <%= f.input :avatar_cache, as: :hidden %>
+    <%= avatar(user, 'profile') %><%= f.file_field :avatar %>
   </div>
-  <div class="btn-file preview"><div class="fileinput-preview fileinput-exists"></div><input type="file"></div>
+  <div class="btn-file preview">
+    <div class="fileinput-preview fileinput-exists"></div>
+    <input type="file">
+  </div>
   <%= link_to icon('undo', ' Revert'), '#', data: {dismiss: 'fileinput'}, class: 'fileinput-exists revert' %>
 </div>
+<%= f.input :avatar_cache, as: :hidden %>
+<%#= f.input :remove_avatar, as: :boolean %>
