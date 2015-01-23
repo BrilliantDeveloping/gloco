@@ -1,5 +1,3 @@
-<p id="notice"><%= notice %></p>
-<hr>
 <h5>Registered Users</h5>
 <hr>
 <table class="table table-hover table-responsive">
@@ -15,10 +13,16 @@
   <tbody>
     <% @users.each do |user| %>
       <tr>
-        <td><%= link_to "#{user.firstname} #{user.lastname}", edit_user_path(user) %></td>
+        <td>
+          <%= link_to edit_user_path(user) do %>
+            <%= avatar(user, 'icon')%> 
+            <%= user.firstname.titleize %>
+            <%= user.lastname.titleize %>
+          <% end %>
+        </td>
         <td><%= link_to user.email, edit_user_path(user) %></td>
-        <td><%= user.created_at.strftime('%b %d, %Y') %></td>
-        <td><%= user.sign_in_count %> <%= user.sign_in_count == 1 ? 'time' : 'times'%></td>
+        <td><a><%= user.created_at.strftime('%b %d, %Y') %></a></td>
+        <td><a><%= user.sign_in_count %> <%= user.sign_in_count == 1 ? 'time' : 'times'%></a></td>
       </tr>
     <% end %>
   </tbody>

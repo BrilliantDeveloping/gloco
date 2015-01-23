@@ -1,9 +1,8 @@
 <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
   <%= f.error_notification %>
   <div class="form-inputs">
-    <hr>
-    <h5>Edit your account settings</h5>
-    <hr>
+    <div class="avatar"><%= render 'users/avatar', f: f, user: current_user %></div>
+    <h5>Edit your account settings</h5><hr>
     <%= f.input :email, required: true, autofocus: true %>
     <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
       <p>Currently waiting confirmation for: <%= resource.unconfirmed_email %></p>
@@ -15,7 +14,7 @@
     <div class="form-actions">
       <%= f.button :submit, "Update", class: 'btn-lg btn-primary btn-wide' %>
     </div>
-    <hr>
+    <br>
     <h5><%= link_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></h5>
   </div>
 <% end %>

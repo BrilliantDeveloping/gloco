@@ -1,18 +1,17 @@
 <%= simple_form_for(@user) do |f| %>
   <%= f.error_notification %>
   <div class="form-inputs">
-    <hr>
-    <h5>Edit User</h5>
-    <hr>
+    <div class="avatar"><%= render 'users/avatar', f: f, user: @user %></div>
+    <h5>Edit User</h5><hr>
     <%= f.input :firstname %>
     <%= f.input :lastname %>
     <%= f.input :email %>
     <hr>
     <div class="form-actions">
       <%= f.button :submit, class: 'btn-primary btn-lg btn-wide' %><br><br>
-      <%= link_to 'Cancel Edit', users_path, class: 'btn btn-lg btn-wide' %>
+      <h5><%= link_to 'Cancel Edit', users_path %></h5>
       <hr>
-      <%= link_to 'Delete User', @user, method: :delete, data: { confirm: 'Delete this User Account?' }, class: 'btn btn-lg btn-wide' %>
+      <h5><%= link_to 'Delete User', @user, method: :delete, data: { confirm: 'Delete this User Account?' } %></h5>
     </div>
   </div>
 <% end %>

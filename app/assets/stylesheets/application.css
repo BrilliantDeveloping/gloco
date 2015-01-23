@@ -1,5 +1,6 @@
 /*
  *= require whitespace-reset
+ *= require jasny-bootstrap.min
  *= require_tree .
  *= require_self
  */
