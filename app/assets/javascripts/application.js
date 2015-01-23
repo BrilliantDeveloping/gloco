@@ -3,5 +3,7 @@
 //= require jquery_ujs
 //= require jasny-bootstrap.min
 //= require bootstrap-sprockets
+//= require underscore
+//= require gmaps/google
 //= require_tree .
 //= require turbolinks

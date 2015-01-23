@@ -24,6 +24,11 @@ gem 'jbuilder', '~> 2.0'
 gem 'carrierwave'
 gem "mini_magick"
 gem "default_value_for", "~> 3.0.0"
+gem 'email_validator'
+gem 'phony_rails'
+gem 'geocoder'
+gem 'gmaps4rails'
+gem 'underscore-rails'
 gem 'rails_12factor'
 
 gem 'sdoc', '~> 0.4.0', group: :doc

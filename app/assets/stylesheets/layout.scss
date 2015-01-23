@@ -17,6 +17,9 @@ body {
   width:100%;
   text-align:center;
 }
+.btn-sq {
+  border-radius:0!important;
+}
 h5 {
   text-align:center;
   color:#777;
@@ -43,7 +46,7 @@ table {
   tr {
     td {
       a {
-        line-height:30px;
+        line-height:40px;
       }
     }
   }
