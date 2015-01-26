@@ -1,18 +1,30 @@
+<br/><!-- <h5>Add/Edit Organization</h5> --><br/>
 <%= simple_form_for(@organization) do |f| %>
   <%= f.error_notification %>
-
   <div class="form-inputs">
-    <%= f.input :image %>
-    <%= f.input :name %>
-    <%= f.input :category, collection: @categories, prompt: 'Organization type:' %>
-    <%#= f.select(:category, categories, {prompt: 'Select type'}) %>
-    <%= f.input :about %>
-    <%= f.input :email %>
-    <%= f.input :phone %>
-    <%= f.input :address %>
+    <div class="pull-left fifty">
+      <%= f.input :name, placeholder: 'Organization Name', label: false %>
+       </div>
+    <div class="pull-right fifty">
+      <%= f.input :category, collection: @categories, prompt: 'Organization type:', label: false %>
+    </div>
+    <div class="clearfix"></div>
+    <%= f.input :about, placeholder: 'About Organization', label: false %>
+    <div class="pull-left fifty">
+      <%= f.input :phone, placeholder: 'Organization Phone', label: false %>
+    </div>
+    <div class="pull-right fifty">
+      <%= f.input :email, placeholder: 'Organization Email', label: false %>
+    </div>
+    <div class="clearfix"></div>
+    <%= f.input :address, placeholder: 'Organization Address', label: false %>
   </div>
-
+  <div class="image">
+    <%= render 'image', f: f, org: @organization %>
+  </div>
+  <div class="clearfix"></div>
   <div class="form-actions">
-    <%= f.button :submit %>
+    <%= f.button :submit, class: 'btn-wide btn-lg btn-primary' %>
+    <!-- <h5><%#= link_to 'Cancel', organizations_path %></h5> -->
   </div>
 <% end %>

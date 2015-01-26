@@ -1,0 +1,12 @@
+<div class="fileinput fileinput-new" data-provides="fileinput">
+  <div class="fileinput-new btn-file">
+    <%= image(org, 'full') %><%= f.file_field :image %>
+  </div>
+  <div class="btn-file preview">
+    <div class="fileinput-preview fileinput-exists"></div>
+    <input type="file">
+  </div>
+  <%= link_to icon('undo', ' Revert'), '#', data: {dismiss: 'fileinput'}, class: 'fileinput-exists revert' %>
+</div>
+<%= f.input :image_cache, as: :hidden %>
+<%#= f.input :remove_image, as: :boolean %>

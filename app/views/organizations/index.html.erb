@@ -1,5 +1,6 @@
 <h5>Organizations</h5>
 
+<%= link_to 'All Categories', organizations_path, class: 'btn btn-info btn-sq' %>
 <% @categories.each do |cat| %>
   <%= link_to cat.pluralize, organizations_path(c: cat.pluralize.downcase), class: 'btn btn-primary btn-sq' %>
 <% end %>

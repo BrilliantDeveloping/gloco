@@ -1,6 +1,5 @@
 class OrganizationsController < ApplicationController
   before_action :set_organization, only: [:show, :edit, :update, :destroy]
-  before_action :set_categories
   before_action :authenticate_user!
 
   respond_to :html
@@ -43,11 +42,8 @@ class OrganizationsController < ApplicationController
     def set_organization
       @organization = Organization.find(params[:id])
     end
-    def set_categories
-      @categories = Organization.categories
-    end
 
     def organization_params
-      params.require(:organization).permit(:image, :name, :category, :about, :email, :phone, :address)
+      params.require(:organization).permit(:image, :name, :category, :about, :email, :phone, :address, categories:[])
     end
 end
