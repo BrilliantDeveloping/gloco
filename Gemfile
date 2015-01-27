@@ -26,7 +26,7 @@ gem "mini_magick"
 gem "default_value_for", "~> 3.0.0"
 gem 'email_validator'
 gem 'phony_rails'
-gem 'geocoder'
+gem 'geocoder', '>= 1.2.7'
 gem 'gmaps4rails'
 gem 'underscore-rails'
 gem 'rails_12factor'

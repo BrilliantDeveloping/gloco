@@ -13,7 +13,20 @@ img {
   }
 }
 .organizations {
-  & form {
+  & .header {
+    padding:15px;
+    background:#eee;
+  }
+  & form#search {
+    float:right;
+    & input[type=text] {
+      width: 300px;
+      height: 35px;
+      float: left;
+      margin-right:5px
+    }
+  }
+  &.new form, &.edit form {
     width:840px;
     margin:0 auto;
     padding:10px;

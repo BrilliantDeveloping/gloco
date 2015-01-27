@@ -18,6 +18,8 @@
     </div>
     <div class="clearfix"></div>
     <%= f.input :address, placeholder: 'Organization Address', label: false %>
+    <%= f.input :longitude, as: :hidden %>
+    <%= f.input :latitude, as: :hidden %>
   </div>
   <div class="image">
     <%= render 'image', f: f, org: @organization %>

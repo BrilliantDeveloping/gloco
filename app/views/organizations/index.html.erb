@@ -1,17 +1,23 @@
 <h5>Organizations</h5>
 
-<%= link_to 'All Categories', organizations_path, class: 'btn btn-info btn-sq' %>
-<% @categories.each do |cat| %>
-  <%= link_to cat.pluralize, organizations_path(c: cat.pluralize.downcase), class: 'btn btn-primary btn-sq' %>
-<% end %>
-  
+<div class="header">
+  <%= link_to 'All Categories', organizations_path, class: 'btn btn-info btn-sq' %>
+  <% @categories.each do |cat| %>
+    <%= link_to cat.pluralize, organizations_path(c: cat.pluralize.downcase), class: 'btn btn-primary btn-sq' %>
+  <% end %>
+  <%= form_tag organizations_path, method: :get, id: 'search' do %>
+    <%= text_field_tag :search, params[:search], class: 'form-control' %>
+    <%= submit_tag "Search Nearby", name: nil, class: 'btn btn-info' %>
+  <% end %>
+</div>
+<div class="clearfix"></div>
 <table class="table">
   <tbody>
     <% @organizations.each do |org| %>
       <tr>
-        <td><%= link_to image(org, 'thumb'), org %></td>
-        <td><%= link_to org.name, org %></td>
-        <td><%= link_to org.category, '#', class: 'btn btn-warning btn-sq' %></td>
+        <td><%= link_to image(org, 'thumb'), org, remote: true %></td>
+        <td><%= link_to org.name, org, remote: true %></td>
+        <td><%= link_to org.category, org, remote: true, class: 'btn btn-warning btn-sq' %></td>
         <td><%= mail_to org.email, org.email %></td>
         <td><%= phone_link org.phone %></td>
         <td><a><%= org.address %></a></td>
@@ -19,7 +25,11 @@
     <% end %>
   </tbody>
 </table>
-
 <br>
 
 <%#= link_to 'New Organization', new_organization_path %>
+
+
+<!-- Model Popup -->
+<div class="modal fade" id="modal-display" data-keyboard="false" data-backdrop="static" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true"></div>
+

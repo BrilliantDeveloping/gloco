@@ -1,0 +1,44 @@
+<div class="modal-dialog">
+  <div class="modal-content">
+    <div class="modal-body">
+
+      <p>
+        <strong>Image:</strong>
+        <%= @organization.image %>
+      </p>
+
+      <p>
+        <strong>Name:</strong>
+        <%= @organization.name %>
+      </p>
+
+      <p>
+        <strong>Category:</strong>
+        <%= @organization.category %>
+      </p>
+
+      <p>
+        <strong>About:</strong>
+        <%= @organization.about %>
+      </p>
+
+      <p>
+        <strong>Email:</strong>
+        <%= @organization.email %>
+      </p>
+
+      <p>
+        <strong>Phone:</strong>
+        <%= @organization.phone %>
+      </p>
+
+      <p>
+        <strong>Address:</strong>
+        <%= @organization.address %>
+      </p>
+
+      <%= link_to 'Close', '#', class: 'btn btn-default', data: {dismiss: 'modal'} %>
+      
+    </div>
+  </div>
+</div>

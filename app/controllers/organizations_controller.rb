@@ -2,11 +2,12 @@ class OrganizationsController < ApplicationController
   before_action :set_organization, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!
 
-  respond_to :html
+  respond_to :html, :js
 
   def index
     @organizations = Organization.all
     @organizations = @organizations.by_category(params[:c]) if params[:c].present?
+    @organizations = Organization.near(params[:search], 10) if params[:search].present?
     respond_with(@organizations)
   end
 
@@ -44,6 +45,6 @@ class OrganizationsController < ApplicationController
     end
 
     def organization_params
-      params.require(:organization).permit(:image, :name, :category, :about, :email, :phone, :address, categories:[])
+      params.require(:organization).permit(:image, :name, :category, :about, :email, :phone, :address, :latitude, :longitude)
     end
 end
